@@ -69,9 +69,9 @@ public class MainWindow {
 		this.directoryChooser = new DirectoryChooser();
 
 		boolean dirSelect = this.selectDirectories.isSelected();
-		System.out.println(dirSelect );
+		
 		boolean fileSelect = this.selectFiles.isSelected();
-		System.out.println(fileSelect);
+		
 
 		ArrayList<String> patternList = new ArrayList<String>();
 		StringBuilder sBuild = new StringBuilder();
