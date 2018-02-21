@@ -70,7 +70,7 @@ public class MainWindow {
 
 		boolean dirSelect = this.selectDirectories.isSelected();
 		
-		boolean fileSelect = this.selectFiles.isSelected();
+		//boolean fileSelect = this.selectFiles.isSelected();
 		
 
 		ArrayList<String> patternList = new ArrayList<String>();
@@ -109,9 +109,9 @@ public class MainWindow {
 			}
 
 		}
-		if (this.selectFiles.isSelected()) {
+		else if (this.selectFiles.isSelected()) {
 			try {
-				search.directorySearch(chooser, list, fileSelect);
+				search.directorySearch(chooser, list, dirSelect);
 			} catch (IllegalArgumentException e) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Error");
@@ -140,7 +140,7 @@ public class MainWindow {
 			}
 
 		}
-		if (this.selectAll.isSelected()) {
+		else{
 
 			try {
 				search.directorySearch(chooser, list);

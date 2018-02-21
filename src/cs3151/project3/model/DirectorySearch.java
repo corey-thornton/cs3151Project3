@@ -88,8 +88,12 @@ public class DirectorySearch {
 		
 		if (nextFile.isDirectory()) {
 			for (File currFile : nextFile.listFiles()) {
+				if(currFile.isDirectory()) {
+					queue.add(currFile);
+				}
 				pathList.add(currFile.getAbsolutePath());
-				queue.add(currFile);
+				
+				
 				
 			}
 		}
@@ -102,8 +106,10 @@ public class DirectorySearch {
 		File nextFile = queue.remove();
 		if (nextFile.isDirectory()) {
 			for (File currFile : nextFile.listFiles()) {
+				if(currFile.isDirectory()) {
 				queue.add(currFile);
 				pathList.add(currFile.getAbsolutePath());
+				}
 			}
 		}
 	}
